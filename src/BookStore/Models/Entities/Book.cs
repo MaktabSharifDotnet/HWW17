@@ -8,5 +8,9 @@
         public string Author { get; set; }
 
         public int PageCount { get; set; }
+        public int CategoryId { get; set; }
+
+        public Category Category { get; set; }
+
     }
 }
