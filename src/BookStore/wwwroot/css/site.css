@@ -1,31 +1,276 @@
+﻿
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazir.woff2') format('woff2'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+
 html {
-  font-size: 14px;
+    font-size: 16px; 
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
 
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    font-family: 'Vazir', sans-serif;
+    background-color: #f8f8f8;
+    direction: rtl;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+.site-header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+    .nav-menu li {
+        display: inline;
+    }
+
+        .nav-menu li a {
+            text-decoration: none;
+            color: #222;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+            .nav-menu li a:hover {
+                color: #2a52be;
+            }
+
+
+.login-btn {
+    background-color: #1e3fa9;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    .login-btn:hover {
+        background-color: #193694;
+    }
+/* --- بخش Hero --- */
+.hero {
+    background: linear-gradient(135deg, #2979ff, #0052cc);
+    color: white;
+    border-radius: 20px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1100px;
+    padding: 60px 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    background-color: #fff;
+    color: #1e3fa9;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+    .hero-btn:hover {
+        background-color: #f0f0f0;
+    }
+
+/* --- بخش دسته‌بندی‌ها --- */
+.categories {
+    text-align: center;
+    margin: 60px auto;
+    width: 90%;
+    max-width: 1100px;
+}
+
+    .categories h2 {
+        font-size: 1.6rem;
+        margin-bottom: 35px;
+        color: #222;
+    }
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .category-card span {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .category-card h3 {
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .category-card p {
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    /* رنگ‌بندی کارت‌ها */
+    .category-card.pink {
+        background-color: #ffe9f0;
+    }
+
+    .category-card.yellow {
+        background-color: #fff4cc;
+    }
+
+    .category-card.green {
+        background-color: #eaffea;
+    }
+
+    .category-card.blue {
+        background-color: #e6f0ff;
+    }
+
+    .category-card.purple {
+        background-color: #edeaff;
+    }
+/* --- جدیدترین کتاب‌ها --- */
+.latest-books {
+    text-align: center;
+    margin: 80px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+    .latest-books h2 {
+        font-size: 1.6rem;
+        color: #222;
+        margin-bottom: 40px;
+    }
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+.book-card {
+    background-color: white;
+    border-radius: 15px;
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding-bottom: 15px;
+}
+
+    .book-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    }
+
+.book-img {
+    background-color: #eaeaea;
+    width: 180px;
+    height: 280px;
+    margin: 20px auto 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+}
+
+.book-card h3 {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.book-card p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.book-card .pages {
+    font-size: 0.8rem;
+    color: #777;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.book-card .price {
+    font-size: 1rem;
+    color: #d60000;
+    font-weight: bold;
+}
+/* --- فوتر سایت --- */
+.site-footer {
+    background-color: #1e2738;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+.footer-content h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-content p {
+    font-size: 0.85rem;
+    color: #d0d0d0;
 }

@@ -3,73 +3,123 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BookStore</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>@ViewData["Title"] - فروشگاه کتاب</title>
+
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/BookStore.styles.css" asp-append-version="true" />
 </head>
-<body style="font-family:Vazir" >
-    <header style="padding: 10px 20px; border-bottom: 1px solid #e0e0e0; overflow: hidden; background-color: #fff;">
-        @* فاصله داخلی، خط زیر، پس‌زمینه سفید *@
+<body>
+    <header class="site-header">
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#">صفحه اصلی</a></li>
+                <li><a href="#">فروشگاه</a></li>
+                <li><a href="#">دسته‌بندی‌ها</a></li>
+                <li><a href="#">نوشته‌ها</a></li>
+                <li><a href="#">درباره ما</a></li>
+                <li><a href="#">تماس با ما</a></li>
+            </ul>
+        </nav>
+        <button class="login-btn">ورود</button>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>هر کتابی که می‌خواهی، اینجاست</h1>
+            <p>با بیش از 100,000 عنوان کتاب در دسته‌بندی‌های مختلف، سفر مطالعاتی خود را آغاز کنید.</p>
+            <a href="#" class="hero-btn">مشاهده پرفروش‌ها</a>
+        </div>
+    </section>
 
-        @* بخش سمت راست (لوگو و منو) *@
-        <div style="float: right; display: flex; align-items: center;">
-            @* فلکس برای تراز عمودی *@
+    <section class="categories">
+        <h2>دسته‌بندی‌ها</h2>
+        <div class="category-grid">
+            <div class="category-card pink">
+                <span>🧒</span>
+                <h3>کودک و نوجوان</h3>
+                <p>داستان‌های مصور</p>
+            </div>
+            <div class="category-card yellow">
+                <span>📚</span>
+                <h3>رمان و داستان</h3>
+                <p>معاصـر، کلاسیک</p>
+            </div>
+            <div class="category-card green">
+                <span>🧠</span>
+                <h3>فلسفه و منطق</h3>
+                <p>غرب و شرق</p>
+            </div>
+            <div class="category-card blue">
+                <span>🔬</span>
+                <h3>علمی و تاریخی</h3>
+                <p>فناوری و تاریخ</p>
+            </div>
+            <div class="category-card purple">
+                <span>🎨</span>
+                <h3>هنر و معماری</h3>
+                <p>طراحی و نقاشی</p>
+            </div>
+        </div>
+    </section>
+    <section class="latest-books">
+        <h2>جدیدترین کتاب‌ها</h2>
+        <div class="books-grid">
 
-            @* لوگو (فعلا با متن) *@
-            <div style="font-weight: bold; font-size: 1.2em; margin-left: 30px;">
-                @* استایل متن لوگو *@
-                مکتب شریف
+            <div class="book-card">
+                <div class="book-img">180 × 280</div>
+                <h3>تغییرات قرن بیستم</h3>
+                <p>جان وایلند</p>
+                <span class="pages">۳۲۰ صفحه</span>
+                <div class="price">۵۵۰,۰۰۰ ت</div>
             </div>
 
-            @* منوی اصلی *@
-            <nav>
-                <ul style="list-style-type: none; margin: 0; padding: 0;">
-                    @* حذف نقطه‌ها و فاصله‌ها *@
-                    <li style="display: inline-block; margin-left: 20px;"><a href="#" style="text-decoration: none; color: #333;">صفحه اصلی</a></li>
-                    <li style="display: inline-block; margin-left: 20px;"><a href="#" style="text-decoration: none; color: #333;">فروشگاه</a></li>
-                    <li style="display: inline-block; margin-left: 20px;"><a href="#" style="text-decoration: none; color: #333;">دسته بندی ها</a></li>
-                    <li style="display: inline-block; margin-left: 20px;"><a href="#" style="text-decoration: none; color: #333;">نوشتارها</a></li>
-                    <li style="display: inline-block; margin-left: 20px;"><a href="#" style="text-decoration: none; color: #333;">درباره ما</a></li>
-                    <li style="display: inline-block;"><a href="#" style="text-decoration: none; color: #333;">تماس با ما</a></li> @* آیتم آخر فاصله چپ نداره *@
-                </ul>
-            </nav>
+            <div class="book-card">
+                <div class="book-img">180 × 280</div>
+                <h3>حکمت‌های کهن</h3>
+                <p>ماکسیوس گاند</p>
+                <span class="pages">۵۰ صفحه</span>
+                <div class="price">۳۸۰,۰۰۰ ت</div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-img">180 × 280</div>
+                <h3>اصول رهبری مدرن</h3>
+                <p>دکتر جان اسمیت</p>
+                <span class="pages">۲۱۰ صفحه</span>
+                <div class="price">۷۵۰,۰۰۰ ت</div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-img">180 × 280</div>
+                <h3>سفر به مریخ</h3>
+                <p>لورا دیویس</p>
+                <span class="pages">۸۲۰ صفحه</span>
+                <div class="price">۶۲۰,۰۰۰ ت</div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-img">180 × 280</div>
+                <h3>آخرین نفس</h3>
+                <p>آنتونیو مارکز</p>
+                <span class="pages">۴۰۰ صفحه</span>
+                <div class="price">۴۹۰,۰۰۰ ت</div>
+            </div>
+
         </div>
+    </section>
 
-        @* دکمه ورود سمت چپ *@
-        <div style="float: left; display: flex; align-items: center; height: 100%;">
-            @* فلکس برای تراز عمودی *@
-            @* تراز عمودی دکمه ورود با display:flex و align-items: center روی div والد انجام شد.
-             برای اینکه کار کنه، به div والد float:left هم یک ارتفاع مثل ارتفاع والدش (header) دادم.
-             چون ارتفاع header مشخص نیست، height: 100% رو امتحان می‌کنیم، اگر نشد باید ارتفاع ثابتی به header بدیم.
-             فعلا فرض می‌کنیم محتوای header ارتفاعش رو تعیین می‌کنه و این کار می‌کنه.
-         *@
-            <a href="#" style="text-decoration: none; color: #555; border: 1px solid #ccc; padding: 6px 18px; border-radius: 4px; background-color: #f8f8f8;">ورود</a>
-        </div>
+    <main role="main">
+        @RenderBody()
+    </main>
 
-    </header>
-
-    @* بقیه کد Layout بدون تغییر *@
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - BookStore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <h3>خانه کتاب | منبع آموزش و مطالعه</h3>
+            <p>طراحی شده برای تمرینات HTML و CSS، تمامی حقوق محفوظ است. © 2025</p>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
