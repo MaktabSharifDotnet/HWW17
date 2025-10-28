@@ -21,7 +21,10 @@ namespace BookStore.Controllers
         public IActionResult Index()
         {
             AppDbContext _context = new AppDbContext();
-            List<Book> books  = _context.Books.ToList();
+            List<Book> books  = _context.Books
+                .OrderByDescending(b=>b.Id)
+                .Take(5)
+                .ToList();
             List<Category> categories = _context.Categories.ToList();
             HomeViewModel homeViewModel = new HomeViewModel() 
             {
