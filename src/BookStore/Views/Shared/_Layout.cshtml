@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,28 +9,53 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BookStore.styles.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BookStore</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+<body style="font-family:Vazir" >
+    <header style="padding: 10px 20px; border-bottom: 1px solid #e0e0e0; overflow: hidden; background-color: #fff;">
+        @* فاصله داخلی، خط زیر، پس‌زمینه سفید *@
+
+        @* بخش سمت راست (لوگو و منو) *@
+        <div style="float: right; display: flex; align-items: center;">
+            @* فلکس برای تراز عمودی *@
+
+            @* لوگو (فعلا با متن) *@
+            <div style="font-weight: bold; font-size: 1.2em; margin-left: 30px;">
+                @* استایل متن لوگو *@
+                مکتب شریف
             </div>
-        </nav>
+
+            @* منوی اصلی *@
+            <nav>
+                <ul style="list-style-type: none; margin: 0; padding: 0;">
+                    @* حذف نقطه‌ها و فاصله‌ها *@
+                    <li style="display: inline-block; margin-left: 20px;"><a href="#" style="text-decoration: none; color: #333;">صفحه اصلی</a></li>
+                    <li style="display: inline-block; margin-left: 20px;"><a href="#" style="text-decoration: none; color: #333;">فروشگاه</a></li>
+                    <li style="display: inline-block; margin-left: 20px;"><a href="#" style="text-decoration: none; color: #333;">دسته بندی ها</a></li>
+                    <li style="display: inline-block; margin-left: 20px;"><a href="#" style="text-decoration: none; color: #333;">نوشتارها</a></li>
+                    <li style="display: inline-block; margin-left: 20px;"><a href="#" style="text-decoration: none; color: #333;">درباره ما</a></li>
+                    <li style="display: inline-block;"><a href="#" style="text-decoration: none; color: #333;">تماس با ما</a></li> @* آیتم آخر فاصله چپ نداره *@
+                </ul>
+            </nav>
+        </div>
+
+        @* دکمه ورود سمت چپ *@
+        <div style="float: left; display: flex; align-items: center; height: 100%;">
+            @* فلکس برای تراز عمودی *@
+            @* تراز عمودی دکمه ورود با display:flex و align-items: center روی div والد انجام شد.
+             برای اینکه کار کنه، به div والد float:left هم یک ارتفاع مثل ارتفاع والدش (header) دادم.
+             چون ارتفاع header مشخص نیست، height: 100% رو امتحان می‌کنیم، اگر نشد باید ارتفاع ثابتی به header بدیم.
+             فعلا فرض می‌کنیم محتوای header ارتفاعش رو تعیین می‌کنه و این کار می‌کنه.
+         *@
+            <a href="#" style="text-decoration: none; color: #555; border: 1px solid #ccc; padding: 6px 18px; border-radius: 4px; background-color: #f8f8f8;">ورود</a>
+        </div>
+
     </header>
+
+    @* بقیه کد Layout بدون تغییر *@
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
