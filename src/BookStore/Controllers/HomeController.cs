@@ -1,7 +1,11 @@
 using System.Diagnostics;
 using BookStore.Models;
+using BookStore.Models.DataBase;
+using BookStore.Models.Entities;
 using BookStore.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+
+
 
 namespace BookStore.Controllers
 {
@@ -16,7 +20,15 @@ namespace BookStore.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            AppDbContext _context = new AppDbContext();
+            List<Book> books  = _context.Books.ToList();
+            List<Category> categories = _context.Categories.ToList();
+            HomeViewModel homeViewModel = new HomeViewModel() 
+            {
+              Books = books,
+              Categories = categories
+            };
+            return View(homeViewModel);
         }
 
         public IActionResult Privacy()
