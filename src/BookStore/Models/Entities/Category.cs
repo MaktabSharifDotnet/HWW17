@@ -5,7 +5,8 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-      
+        public string IconCharacter { get; set; }
+        public string ColorClassName { get; set; }
         public List<Book> Books { get; set; }
     }
 }

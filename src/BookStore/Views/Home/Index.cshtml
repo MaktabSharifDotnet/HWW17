@@ -13,78 +13,38 @@
 </section>
 
 <section class="categories">
+   
     <h2>دسته‌بندی‌ها</h2>
     <div class="category-grid">
-        <div class="category-card pink">
-            <span>🧒</span>
-            <h3>کودک و نوجوان</h3>
-            <p>داستان‌های مصور</p>
+    @foreach (var category in Model.Categories)
+    {
+            <div class="category-card @category.ColorClassName">
+            <span>@category.IconCharacter</span>
+            <h3>@category.Name</h3>
+            <p>@category.Description</p>
         </div>
-        <div class="category-card yellow">
-            <span>📚</span>
-            <h3>رمان و داستان</h3>
-            <p>معاصـر، کلاسیک</p>
-        </div>
-        <div class="category-card green">
-            <span>🧠</span>
-            <h3>فلسفه و منطق</h3>
-            <p>غرب و شرق</p>
-        </div>
-        <div class="category-card blue">
-            <span>🔬</span>
-            <h3>علمی و تاریخی</h3>
-            <p>فناوری و تاریخ</p>
-        </div>
-        <div class="category-card purple">
-            <span>🎨</span>
-            <h3>هنر و معماری</h3>
-            <p>طراحی و نقاشی</p>
-        </div>
+    }
     </div>
 </section>
 <section class="latest-books">
     <h2>جدیدترین کتاب‌ها</h2>
     <div class="books-grid">
 
-        <div class="book-card">
-            <div class="book-img">180 × 280</div>
-            <h3>تغییرات قرن بیستم</h3>
-            <p>جان وایلند</p>
-            <span class="pages">۳۲۰ صفحه</span>
-            <div class="price">۵۵۰,۰۰۰ ت</div>
-        </div>
-
-        <div class="book-card">
-            <div class="book-img">180 × 280</div>
-            <h3>حکمت‌های کهن</h3>
-            <p>ماکسیوس گاند</p>
-            <span class="pages">۵۰ صفحه</span>
-            <div class="price">۳۸۰,۰۰۰ ت</div>
-        </div>
-
-        <div class="book-card">
-            <div class="book-img">180 × 280</div>
-            <h3>اصول رهبری مدرن</h3>
-            <p>دکتر جان اسمیت</p>
-            <span class="pages">۲۱۰ صفحه</span>
-            <div class="price">۷۵۰,۰۰۰ ت</div>
-        </div>
-
-        <div class="book-card">
-            <div class="book-img">180 × 280</div>
-            <h3>سفر به مریخ</h3>
-            <p>لورا دیویس</p>
-            <span class="pages">۸۲۰ صفحه</span>
-            <div class="price">۶۲۰,۰۰۰ ت</div>
-        </div>
-
-        <div class="book-card">
-            <div class="book-img">180 × 280</div>
-            <h3>آخرین نفس</h3>
-            <p>آنتونیو مارکز</p>
-            <span class="pages">۴۰۰ صفحه</span>
-            <div class="price">۴۹۰,۰۰۰ ت</div>
-        </div>
+        @foreach (var book in Model.Books)
+        {
+            <div class="book-card">
+                <div class="book-img">
+                    
+                    <img src="@book.ImageUrl" alt="@book.Title" width="180" height="280" style="object-fit: cover; border-radius: 8px;" />
+                </div>
+                <h3>@book.Title</h3>
+                <p>@book.Author</p>
+                
+                <span class="pages">@book.PageCount صفحه</span>
+               
+                <div class="price">@book.Price.ToString("N0") ت</div>
+            </div>
+        }
 
     </div>
 </section>
