@@ -6,6 +6,7 @@ namespace BookStore.Models.ViewModels
     {
         public Book Book { get; set; }
         public List<Category> Categories { get; set; }
+        public Category Category { get; set; }
         public IFormFile ImageFile { get; set; }
     }
 }
