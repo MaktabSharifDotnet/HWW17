@@ -2,6 +2,7 @@ using System.Diagnostics;
 using BookStore.Models;
 using BookStore.Models.DataBase;
 using BookStore.Models.Entities;
+using BookStore.Models.Services;
 using BookStore.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +12,10 @@ namespace BookStore.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly BookService bookService= new BookService();
+        
+        private readonly CategoryService categoryService= new CategoryService();
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -20,12 +25,10 @@ namespace BookStore.Controllers
 
         public IActionResult Index()
         {
-            AppDbContext _context = new AppDbContext();
-            List<Book> books  = _context.Books
-                .OrderByDescending(b=>b.Id)
-                .Take(5)
-                .ToList();
-            List<Category> categories = _context.Categories.ToList();
+
+            List<Book> books = bookService.GetBooks();
+         
+            List<Category> categories = categoryService.GetCategories();
             HomeViewModel homeViewModel = new HomeViewModel() 
             {
               Books = books,
